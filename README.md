@@ -1,38 +1,17 @@
-# Welcome to Remix!
+# About
 
-- [Remix Docs](https://remix.run/docs)
+¿Somos una sociedad suficientemente avanzada para dar y recibir críticas constructivas? Donde el foco es el crecimiento de todos, buscando el bienestar de los individuos a través de una sociedad consciente.
 
-## Development
+## Lo que se puede hacer
 
-From your terminal:
-
-```sh
-npm run dev
-```
-
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
+- Podemos buscar placas
+- Si la placa que se buscó no tiene ningún mensaje se puede dejar un mensaje
+- Desde el home podemos crear mensajes ya sea a placa específica o al público en general
+- Se puede ver los mensajes que se han dejado en una placa
+- Se pueden escoger varios tipos de mensajes
+  - Sugerencia
+  - Queja
+  - Observación
+  - Felicitación
+  - Agradecimiento
+  - Propuesta
