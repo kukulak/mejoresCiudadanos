@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('/fonts/PPFormula-Regular.ttf'); */
+
+/* @layer base { */
+@font-face {
+  font-family: 'PPFormula';
+  src: url('../public/fonts/PPFormula-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PPFormulaLight';
+  src: url('../public/fonts/PPFormula-Light.ttf') format('truetype');
+}
+/* } */
+
+a:hover {
+  color: hwb(25 60% 2%);
+  /* border: solid 1px white; */
+}
+a.active {
+  color: hwb(25 60% 2%);
+}
+
+.sugerencia {
+  /* background-color: #fffff9 !important;
+  background-color: #e4e4e7 !important; */
+  box-shadow: 2px 2px 91px #8181818a;
+  z-index: 5;
+}
+.queja {
+  /* background-color: #fff3f3 !important;
+  background-color: #c8c9ce !important; */
+  box-shadow: 2px 2px 110px #8181818a;
+  z-index: 3;
+}
+.observacion {
+  /* background-color: #ecfeff !important;
+  background-color: #d6d7d8 !important; */
+  box-shadow: 2px 2px 120px #8181818a;
+  z-index: 8;
+}
+.felicitacion {
+  /* background-color: #f2fff2 !important;
+  background-color: #f1f2f3 !important; */
+  box-shadow: 2px 2px 130px #8181818a;
+  z-index: 11;
+}
+
+.agradecimiento {
+  /* background-color: #f1fff8 !important;
+  background-color: #ffffff !important; */
+  box-shadow: 2px 2px 140px #8181818a;
+  z-index: 10;
+}
+
+.poco {
+  /* position: absolute; */
+  /* left: -10px; */
+  margin-top: -45px;
+  margin-left: -130px;
+  width: 350%;
+  rotate: -8deg;
+  overflow: hidden;
+  height: 38px;
+}
+.medio {
+  /* position: absolute; */
+  /* left: -10px; */
+  margin-top: 41px;
+  margin-left: -130px;
+  width: 350%;
+  rotate: 4deg;
+  overflow: hidden;
+}
+
+.mucho {
+  /* position: absolute; */
+  /* left: -10px; */
+  margin-top: 41px;
+  margin-left: -130px;
+  width: 350%;
+  rotate: 12deg;
+  overflow: hidden;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+.footer {
+  /* position: fixed; */
+  bottom: -10px;
+  left: 0;
+  height: 120px;
+  z-index: 100000;
+  width: 100%;
+}

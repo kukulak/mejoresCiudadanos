@@ -1,0 +1,104 @@
+import { useState } from 'react'
+import {
+  Form,
+  useActionData,
+  Link,
+  useNavigation,
+  useLoaderData
+} from '@remix-run/react'
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    try {
+      const response = await fetch('../../data/contact.server.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response?.ok) {
+        alert('¡Formulario enviado con éxito!')
+      } else {
+        alert(
+          'Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.'
+        )
+      }
+      // Aquí puedes manejar la respuesta del servidor, por ejemplo, mostrar un mensaje de éxito al usuario.
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      // Aquí puedes manejar cualquier error que ocurra durante el envío del formulario.
+    }
+  }
+
+  return (
+    <div className=" sm:pt-32 pt-10 flex pb-40 justify-center items-center">
+      <div className="flex justify-center items-center flex-col bg-light rounded-xl lg:w-1/2">
+        <Form
+          className=" rounded-2xl bg-light min-w-full p-6 flex-col flex gap-7 "
+          onSubmit={handleSubmit}
+        >
+          <div className="flex flex-col">
+            <label htmlFor="name">Nombre: </label>
+            <input
+              className=" text-center text-2xl bg-dark text-light p-3 pt-4 rounded-xl "
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="email">Correo electrónico:</label>
+            <input
+              className=" text-center text-2xl bg-dark text-light  p-3 pt-4 rounded-xl "
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="subject">Asunto:</label>
+            <input
+              className=" text-center text-2xl bg-dark text-light  p-3 pt-4 rounded-xl "
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="message">Mensaje:</label>
+            <textarea
+              className="bg-medium min-h-80  p-3 rounded-xl "
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </Form>
+      </div>
+    </div>
+  )
+}
+
+export default ContactForm
